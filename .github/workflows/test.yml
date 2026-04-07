@@ -35,3 +35,6 @@ jobs:
 
       - name: Vérification du style (Linter)
         run: npx eslint .
+
+      - name: Build du projet
+        run: npm run build
