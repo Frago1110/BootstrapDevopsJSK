@@ -16,6 +16,12 @@ jobs:
       - name: Checkout du code
         uses: actions/checkout@v3
 
+      # Étape demandée : Installer Node.js  
+      - name: Installation de Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # La version recommandée pour ce projet
+
       # Étape demandée : Afficher le message
       - name: Afficher Hello
         run: echo "Hello Github Actions!"
@@ -23,3 +29,9 @@ jobs:
       # Étape demandée : Lister les fichiers du répertoire
       - name: Lister les fichiers
         run: ls -R
+
+      - name: Installation des outils
+        run: npm ci
+
+      - name: Vérification du style (Linter)
+        run: npx eslint .
