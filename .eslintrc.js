@@ -16,5 +16,6 @@ module.exports = {
     'no-restricted-syntax': ['error', 'VariableDeclaration[kind!="var"]'],
     'object-shorthand': 'error',
     'simple-import-sort/imports': 'error',
+    'no-unused-vars': 'off',
   },
 };
