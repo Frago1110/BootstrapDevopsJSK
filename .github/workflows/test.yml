@@ -1,0 +1,25 @@
+# Nom du workflow (apparaît dans l'onglet Actions de GitHub)
+name: test
+
+# 1. Le Trigger : Se déclenche à chaque push sur n'importe quelle branche
+on: [push]
+
+# 2. Le Job : On définit ce qu'on va faire
+jobs:
+  mon_premier_job:
+    # Le Runner : On demande à GitHub une machine virtuelle sous Ubuntu
+    runs-on: ubuntu-latest
+
+    # 3. Les Steps : La liste des actions à exécuter dans l'ordre
+    steps:
+      # Étape indispensable : on récupère le code de ton repo sur la machine
+      - name: Checkout du code
+        uses: actions/checkout@v3
+
+      # Étape demandée : Afficher le message
+      - name: Afficher Hello
+        run: echo "Hello Github Actions!"
+
+      # Étape demandée : Lister les fichiers du répertoire
+      - name: Lister les fichiers
+        run: ls -R
