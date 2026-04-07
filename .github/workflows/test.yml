@@ -14,11 +14,11 @@ jobs:
     steps:
       # Étape indispensable : on récupère le code de ton repo sur la machine
       - name: Checkout du code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Étape demandée : Installer Node.js  
       - name: Installation de Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18 # La version recommandée pour ce projet
 
